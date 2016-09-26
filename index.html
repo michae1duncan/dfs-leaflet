@@ -8,14 +8,24 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.0-rc.3/dist/leaflet.css" />
+
+  <style>
+    html, body, #mapid {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 100%;
+    }
+  </style>
+
 </head>
 <body>
-  <div id="mapid" style="width: 600px; height: 400px"></div>
+  <div id="mapid" ></div>
 
 	<script src="https://unpkg.com/leaflet@1.0.0-rc.3/dist/leaflet.js"></script>
 	<script>
 
-		var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+		var mymap = L.map('mapid').setView([37.67546,-113.06678], 16);
 
 		L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpandmbXliNDBjZWd2M2x6bDk3c2ZtOTkifQ._QA7i5Mpkd_m30IGElHziw', {
 			maxZoom: 18,
@@ -26,20 +36,20 @@
 		}).addTo(mymap);
 
 
-		L.marker([51.5, -0.09]).addTo(mymap)
-			.bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
-
-		L.circle([51.508, -0.11], 500, {
-			color: 'red',
-			fillColor: '#f03',
-			fillOpacity: 0.5
-		}).addTo(mymap).bindPopup("I am a circle.");
-
-		L.polygon([
-			[51.509, -0.08],
-			[51.503, -0.06],
-			[51.51, -0.047]
-		]).addTo(mymap).bindPopup("I am a polygon.");
+		// L.marker([51.5, -0.09]).addTo(mymap)
+		// 	.bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
+    //
+		// L.circle([51.508, -0.11], 500, {
+		// 	color: 'red',
+		// 	fillColor: '#f03',
+		// 	fillOpacity: 0.5
+		// }).addTo(mymap).bindPopup("I am a circle.");
+    //
+		// L.polygon([
+		// 	[51.509, -0.08],
+		// 	[51.503, -0.06],
+		// 	[51.51, -0.047]
+		// ]).addTo(mymap).bindPopup("I am a polygon.");
 
 
 		var popup = L.popup();
